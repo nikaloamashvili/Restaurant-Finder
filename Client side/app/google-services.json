@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "918153350865",
+    "project_id": "android2-25027",
+    "storage_bucket": "android2-25027.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918153350865:android:e2ac8dc57e3a2e9aadfff0",
+        "android_client_info": {
+          "package_name": "com.example.nika.android2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "918153350865-leqh02nknsvueg8c4d4lr9e32e08itvu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlS2ZFdhOg7gYX1JJ6HvDHcK_bHee_tm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "918153350865-leqh02nknsvueg8c4d4lr9e32e08itvu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
