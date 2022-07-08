@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class socketHandler extends Thread {
 	Socket incoming;
-	Mongo mongo;
+//	Mongo mongo;
 	Sql sql;
 	
 	socketHandler(Socket _in , Sql sql)

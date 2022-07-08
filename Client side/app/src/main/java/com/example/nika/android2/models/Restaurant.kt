@@ -16,6 +16,8 @@ class Restaurant : Serializable {
         private set
     lateinit var userEmail: String
     var id: Long=0
+    lateinit var rwebsite: String
+
     //var min_p: Long=0
 
 
@@ -38,6 +40,15 @@ class Restaurant : Serializable {
         this.photo = photo
         this.userEmail = userEmail;
         this.id = id
+    }
+    constructor(name: String,  raw_ranking: String, address: String, photo: String,id:Long,userEmail:String,rwebsite:String) {
+        this.name = name
+        this.raw_ranking = raw_ranking
+        this.address = address
+        this.photo = photo
+        this.userEmail = userEmail;
+        this.id = id
+        this.rwebsite=rwebsite;
     }
 
 }

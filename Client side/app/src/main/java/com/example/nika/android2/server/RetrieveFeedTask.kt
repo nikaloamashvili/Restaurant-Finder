@@ -10,17 +10,17 @@ import java.io.InputStreamReader
 import java.lang.Exception
 import java.net.Socket
 
-class RetrieveFeedTask(bool:String,name:String,phone: String,age:String,address: String,email: String,admin: String  ) :
-    AsyncTask<String?, Void?, String?>() {
+class RetrieveFeedTask() : AsyncTask<String?, Void?, String?>() {
     private val exception: Exception? = null
     private var modifiedSentence: String? = null
-    private val iname :String =name;
-    private val iphone :String =phone;
-    private val iage :String =age;
-    private val iadmin :String =admin;
-    private val iaddress :String =address;
-    private val iemail :String =email;
-    private val ibool :String =bool;
+    private lateinit var iname :String ;
+    private lateinit var iphone :String ;
+    private lateinit var iage :String ;
+    private lateinit var iadmin :String ;
+    private lateinit var iaddress :String ;
+    private lateinit var iemail :String ;
+    private lateinit var ibool :String;
+
     private lateinit var dataofuser:String ;
     private lateinit var sname :String ;
     private lateinit var sphone :String ;
@@ -30,11 +30,27 @@ class RetrieveFeedTask(bool:String,name:String,phone: String,age:String,address:
     private lateinit var sadmin :String ;
 
     private  var done :Int =0 ;
+
+    constructor(bool:String,user: User) : this() {
+      iname  = user.name;
+      iphone  = user.phone;
+      iage  = user.age;
+     iadmin  = user.admin;
+    iaddress = user.address;
+        iemail  = user.mail;
+     ibool  =bool;
+    }
+
+    constructor(bool:String,mail:String) : this() {
+          ibool  =bool;
+          iemail =mail;
+    }
+
+
+
     companion object{
         private var user  : User = User("0","0","0","0","0","0");
         fun returnuser(): User {
-
-            // var user :User = User("0","0","0","0","0")
             return user ;
 
         }
@@ -46,10 +62,8 @@ class RetrieveFeedTask(bool:String,name:String,phone: String,age:String,address:
     protected override fun doInBackground(vararg p0: String?): String? {
         var clientSocket: Socket? = null
         try {
-            //192.168.1.11
 
-
-            clientSocket = Socket("192.168.1.11", 10000)
+            clientSocket = Socket("", 10000)//enter your pc ip here
 
             val outToServer = DataOutputStream(clientSocket.getOutputStream())
 

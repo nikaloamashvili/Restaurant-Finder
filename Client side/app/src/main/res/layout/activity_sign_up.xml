@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".user.SignUpActivity">
-
+    tools:context=".activities.SignUpActivity">
 
     <TextView
         android:id="@+id/textsignup"
@@ -36,7 +35,7 @@
             android:id="@+id/nameEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="full Name" />
+            android:hint="Name" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -87,7 +86,6 @@
             android:id="@+id/addressET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:hint="address"
             android:inputType="text" />
 

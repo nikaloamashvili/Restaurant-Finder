@@ -1,10 +1,7 @@
 package com.example.nika.android2.server
 
 import android.os.AsyncTask
-import android.util.Log
-import com.example.nika.android2.lazycolum.Repository
 import com.example.nika.android2.models.Restaurant
-import com.example.nika.android2.models.User
 import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.IOException
@@ -13,12 +10,12 @@ import java.lang.Exception
 import java.net.Socket
 import java.util.ArrayList
 
-class RetrieveFeedTaskForRestaurant(bool:String,  restaurant: Restaurant ,email: String ) :
+class RetrieveFeedTaskForRestaurant() :
     AsyncTask<String?, Void?, String?>() {
         private val exception: Exception? = null
         private var modifiedSentence: String? = null
-        private val irestaurant :Restaurant =restaurant;
-        private val ibool :String =bool;
+        private lateinit var irestaurant :Restaurant ;
+        private lateinit var ibool :String ;
         private lateinit var dataores:String ;
         private lateinit var sname :String ;
         private lateinit var sraw_ranking :String ;
@@ -26,30 +23,34 @@ class RetrieveFeedTaskForRestaurant(bool:String,  restaurant: Restaurant ,email:
         private lateinit var sphoto :String ;
         private lateinit var suserEmail :String ;
         private var id: Long=0
-        private val iemail :String =email;
-
-
-
+        private lateinit var iemail :String ;
 
     private  var done :Int =0 ;
         companion object{
             private val arrrestaurant: ArrayList<Restaurant> = ArrayList<Restaurant>()
-            //private var restaurant  : Restaurant = Restaurant("0","0","0","0",4);
             fun getArrState(): ArrayList<Restaurant> {
-
-                // var user :User = User("0","0","0","0","0")
                 return arrrestaurant ;
-
             }
         }
 
+    constructor(bool:String,  restaurant: Restaurant ,email: String ) : this() {
+        irestaurant=restaurant;
+        iemail  = email;
+        ibool  =bool;
+    }
 
+    constructor(bool:String, email: String ) : this() {
+        iemail  = email;
+        ibool  =bool;
+    }
 
 
         protected override fun doInBackground(vararg p0: String?): String? {
             var clientSocket: Socket? = null
             try {
-                clientSocket = Socket("192.168.1.11", 10000)
+                //172.16.74.157
+                    //192.168.1.11
+                clientSocket = Socket("", 10000)//enter your pc ip here
                 val outToServer = DataOutputStream(clientSocket.getOutputStream())
                 val inFromServer = BufferedReader(InputStreamReader(clientSocket.getInputStream()))
                 if(ibool=="3"){
