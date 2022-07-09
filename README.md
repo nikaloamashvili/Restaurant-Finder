@@ -31,12 +31,9 @@ phone varchar(45)
 age varchar(45) 
 address varchar(45) 
 mail varchar(45) 
-admin varchar(45)
+admin varchar(45) // 
+To make a user an administrator you need to change the value in this column (admin) to one, in the existing version this can only be done directly through the MySQL DB.
+When a user is defined as a manager and he marks a restaurant as a favorite then all users will see it in their favorites lists (this is creating a restaurant advertisement).
 
 ## The App Flow
 ![image](https://user-images.githubusercontent.com/76586954/178093031-17c9f6a1-3338-4b06-b7b7-eb7966fded4f.png)
-
-## App download
-click this link from your mobile app [click here](https://github.com/nikaloamashvili/Restaurant-Finder/blob/main/Client%20side/app-debug.apk).
-
-
